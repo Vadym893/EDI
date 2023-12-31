@@ -6,8 +6,258 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+p{
+  margin: 0;
+}
+.main {
+  background-image: url(https://cdn.cloudflare.steamstatic.com/apps/dota2/images//leaderboards/bg_repeat.jpg);
+  background-repeat: repeat-y;
+  background-position: top center;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.header{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://cdn.cloudflare.steamstatic.com/apps/dota2/images/header/header_bg.png');
+  height: 64px;
+  padding-left: 35px;
+  padding-right: 20px;    
+}
+th,td{
+  font-size: 14px;
+  border: 1px black solid;
+}
+.header-content{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-content-text{
+  text-transform: uppercase;
+  color: #cecece;
+  text-decoration: none;
+  border-left: 1px solid #cecece;
+  padding-left: 20px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  transition: color 0.3s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-sign{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-sign-up{
+  color: #626263;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Radiance';
+  border-right: 1px solid #626263;
+  transition: color 0.3s;
+  padding-right: 15px;
+}
+
+.header-language{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #626263;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Radiance';
+  transition: color 0.3s;
+}
+
+.header-button{
+  position: relative;
+  display: flex;
+  height: 36px;
+  align-items: center;
+  color: #4585C3;
+  text-decoration: none;  
+  background-color: #111C26;
+  text-transform: uppercase;
+  font-family: 'Radiance';
+  letter-spacing: 2px;    
+  padding: 0 20px;    
+  border-radius: 2px;
+  border: 1px solid #336391;
+  transition: all 0.5s;
+}
+
+.header-button:hover{
+  transform: scale(1.1,1.1);
+  background-color: #214464;
+}
+
+.header-language:hover , .header-sign-up:hover , .header-content-text:hover{
+  color: #fff;
+}
+
+.sub-menu
+{
+  display: none;
+  position: relative;
+  z-index: 3;
+}
+.main-item:focus ~ .sub-menu,
+.main-item:active ~ .sub-menu,
+.sub-menu:hover
+{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 43px;
+  left: 650px;
+  width: 200px;
+  box-sizing: border-box;
+  background: #000;
+  padding: 5px 1px;
+  border: 1px solid lightgray;
+}
+
+.sub-menu-box-1{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-box-1-text{
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 15px;
+  color: rgb(173, 171, 171);
+  font-family: "Radiance";
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.menu-box-1-text:hover{
+  color: #fff;
+  background-color: rgb(211, 203, 203);
+}
+
+.table-head{
+  background-image: url(https://cdn.cloudflare.steamstatic.com/apps/dota2/images//leaderboards/bg_top.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.main-header{
+  padding-top: 50px;
+  text-align: center;
+  font-size: 36px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #b7b7b4;
+}
+
+.main-button-wrapper{
+  display: flex;
+  justify-content: space-around;
+  width: 630px;
+  margin: 170px auto;
+}
+
+.link {
+  font-size: 24px;
+  text-decoration: none;
+  color: #b7b7b4;
+  position: relative;
+}
+
+
+.link:hover{
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+#globe {
+  position: absolute;
+  top: 350px;
+  right: 380px;
+  z-index: 0;
+}
+.player_column{
+  display:flex;
+  justify-content:space-between
+}
+.flag_photo{
+  width: 25px;
+  height: 15px;
+  float: right;
+}
+.element_name {
+  color: white;
+  font-weight: bold;
+}
+.app_wrapper{
+  background-color: #0a1010;
+  padding: 0;
+  margin: 0;
+  font-family: georgia,serif;
+  text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+  color: #5e5e5e;
+  background-position: top center;
+}
+.div_table {
+  background-position: center;
+  position:relative;
+  width:100%;
+
+  .table {
+    border-collapse: collapse;
+    border:1.6px solid grey;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    color: #bab7b7;
+    z-index: 1;
+    th{
+      background-color: black;
+    }
+    td{
+      padding: 5px;
+      
+    }
+    td, th{
+      border: 0.8px solid grey;
+    }
+    tr:nth-child(odd) {
+      background-color: #5a5858; 
+    }
+    .first_column {
+      width:10%;
+    }
+    .second_column {
+      width: 90%;
+      text-align: start;
+    }
+  }
+}
+.ranking{
+  text-align: center;
+}
+.content{
+  background-image: url(https://cdn.cloudflare.steamstatic.com/apps/dota2/images//leaderboards/bg_top.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 938px;
+  min-height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
