@@ -1,22 +1,22 @@
 import React,{useState,useEffect} from "react";
 import Header from "./header";
 import Table from "./table";
-export default function Table_pages(){
+export default function TablePages(){
     const [currentRegion,setCurrentRegion]=useState("eu")
     const [rows,setRows]=useState([]);
 
     useEffect(()=>{
-        if (currentRegion=="eu"){
+        if (currentRegion==="eu"){
             fetch("https://my.api.mockaroo.com/leaderboard.json?key=81b9afa0").then(data =>data.json()).then(json=>{
                 setRows(json)
             }).catch(err => {console.log(err)})
         }
-        else if (currentRegion=="america"){
+        else if (currentRegion==="america"){
             fetch("https://my.api.mockaroo.com/leaderboard_americas.json?key=81b9afa0").then(data=>data.json()).then(json=>{
                 setRows(json)
             }).catch(err => {console.log(err)})
         }
-        else if (currentRegion=="asia"){
+        else if (currentRegion==="asia"){
             fetch("https://my.api.mockaroo.com/leaderboard_asia.json?key=81b9afa0").then(data=>data.json()).then(json=>{
                 setRows(json)
             }).catch(err => {console.log(err)})
