@@ -1,13 +1,15 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 const Table = ({data}) => {
+    const {t}=useTranslation()
     return(
         <>
             <div className="div_table">
                 <table className="table">
                     <thead>
                         <tr>
-                            <th className="first_column">Division<br/>Rank</th>
-                            <th className="second_column">Player</th>
+                            <th className="first_column">{t("Division")}<br/>{t("Rank")}</th>
+                            <th className="second_column">{t("Player")}</th>
                         </tr>
                     </thead>
                     <tbody id="tbody">

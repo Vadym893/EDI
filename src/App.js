@@ -5,6 +5,7 @@ import { AllRoutes } from "./actions/routes";
 function App() {
   return (
     <Router>
+        
         <AllRoutes />
     </Router>
   );

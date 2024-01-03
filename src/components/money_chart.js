@@ -1,24 +1,26 @@
 import React from "react";
 import { LineChart } from "@mui/x-charts";
 import Header from "./header";
-
+import { useTranslation } from 'react-i18next'
 function MoneyChart(){
+    const {t}=useTranslation()
     const xLabels = [];
     const uData = [];
     let i=0;
     while (uData.length <59){
         if (i<=20){
-        xLabels.push(`${10+i} Nov`)
+        xLabels.push(`${(10+i<10)?(`0${10+i}`):(10+i)}.11.2023`)
         }else if(i<=51){
-            xLabels.push(`${i-20} Dec`)
+            xLabels.push(`${(i-20<10)?(`0${i-20}`):(i-20)}.12.2023`)
         }else{
-            xLabels.push(`${i-51} Jan`)
+            xLabels.push(`${(i-51<10)?(`0${i-51}`):(i-51)}.01.2024`)
         }
-        let random_num=Math.floor(Math.random() * (1000 - 120)) + 120
+        let random_num=Math.floor(Math.random() * (10000 - 1200)) + 1200
         if (random_num!==0){
             uData.push(random_num)
         }
         i++
+
     }
     console.log(uData,xLabels)
     return(
@@ -28,7 +30,7 @@ function MoneyChart(){
                 <div className="chart_container">
                     <LineChart
                         series={[
-                            { data: uData, label: 'all money spent by players' }
+                            { data: uData, label: `${t("all money spent by players")}` }
                         ]}
                         xAxis={[{ scaleType: 'point', data: xLabels }]}
                     />
@@ -37,10 +39,10 @@ function MoneyChart(){
                 <table className="money_table">
                     <thead>
                         <tr>
-                            <th className="money_graph"> Day</th>
-                            <th className="money_graph">Amount in $</th>
-                            <th className="money_graph">Comparable Gain</th>
-                            <th className="money_graph">%Gain</th>
+                            <th className="money_graph"> {t("Day")}</th>
+                            <th className="money_graph">{t("Amount in $")}</th>
+                            <th className="money_graph">{t("Comparable Gain")}</th>
+                            <th className="money_graph">{t("%Gain")}</th>
                         </tr>
                     </thead>
                     <tbody id="body">
