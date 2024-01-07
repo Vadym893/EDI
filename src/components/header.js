@@ -20,7 +20,7 @@ export default function Header(){
                 </div>
                 <div className="header-sign">
                     <a href="https://store.steampowered.com/login/" className="header-sign-up">{t("Login")}</a>
-                    <a href="#" className="header-language">{t("Language")}<img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/header/small_arrow.png" alt="tr2"/>
+                    <a href="#" className="header-language">{t("Language")+":  "}
                         <LanguageSelector/>
                     </a>
                     <a href="https://store.steampowered.com/app/2106670/Gatekeeper/" className="header-button">{t("Play for free")}</a>

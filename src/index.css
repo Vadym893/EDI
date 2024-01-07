@@ -384,6 +384,7 @@ th,td{
   justify-content: center;
   box-sizing: border-box;
   border-bottom: 3px solid #313131;
+  cursor: pointer;
 }
 
 .bottom-content{
@@ -539,4 +540,82 @@ th,td{
     }
   }
 }
+}
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 10vw;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color:black;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+:root {
+  --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
+  --gray: #34495e;
+  --darkgray: #2c3e50;
+}
+.square-container {
+  width: 60vw;
+  margin: 0 auto;
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color:rgb(167, 161, 161)
+}
+.date {
+  font-size: 24px;
+  margin-bottom: 10px;
+
+}
+
+.update {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.changes {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.list{
+  list-style-type: circle;
+
 }
